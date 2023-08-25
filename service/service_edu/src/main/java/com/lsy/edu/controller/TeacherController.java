@@ -1,9 +1,12 @@
 package com.lsy.edu.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.lsy.edu.entity.Teacher;
+import com.lsy.edu.service.TeacherService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 /**
  * <p>
@@ -16,6 +19,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/edu/teacher")
 public class TeacherController {
+    @Autowired
+    private TeacherService teacherService;
+
+    //1.查询所有
+    @GetMapping("findAll")
+    public List<Teacher> findAllTeacher(){
+        List<Teacher> list = teacherService.list(null);
+        return list;
+    }
+
+    //2.逻辑删除
+    @DeleteMapping("{id}")
+    public boolean removeTeacher(@PathVariable String id) {
+        boolean flag = teacherService.removeById(id);
+        return flag;
+    }
 
 }
 
