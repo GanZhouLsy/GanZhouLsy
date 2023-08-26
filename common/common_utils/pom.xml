@@ -5,18 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.lsy</groupId>
-        <artifactId>service</artifactId>
+        <artifactId>common</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>service_edu</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-extension</artifactId>
-            <version>3.0.5</version>
-        </dependency>
-    </dependencies>
+    <artifactId>common_utils</artifactId>
 
 
 </project>
