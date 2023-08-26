@@ -7,6 +7,7 @@ import com.lsy.commonutils.R;
 import com.lsy.edu.entity.Teacher;
 import com.lsy.edu.entity.vo.TeacherQuery;
 import com.lsy.edu.service.TeacherService;
+import com.lsy.servicebase.exceptionhandler.GuliException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.poi.ss.formula.functions.T;
@@ -78,7 +79,13 @@ public class TeacherController {
         Integer level = teacherQuery.getLevel();
         String begin = teacherQuery.getBegin();
         String end = teacherQuery.getEnd();
-        int a = 10/0;
+
+//        try {自定义异常测试
+//            int a = 10/0;
+//        }catch (Exception e) {
+//            throw new GuliException(2001,"自定义异常");
+//        }
+
         if (!StringUtils.isEmpty(name)){
             queryWrapper.like("name", name);
         }
