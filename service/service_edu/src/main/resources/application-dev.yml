@@ -20,12 +20,13 @@ spring:
     date-format: yyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 
+#这些只能输出到控制台
 #mybatis日志
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-#日志j级别
-logging:
-  level:
-    root: info
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#
+##日志j级别
+#logging:
+#  level:
+#    root: info

@@ -1,6 +1,7 @@
 package com.lsy.servicebase.exceptionhandler;
 
 import com.lsy.commonutils.R;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @Description 统一异常处理
  */
 @ControllerAdvice
+@Slf4j
 public class GlobalExceptionHandler {
 
     //指定出现什么异常执行该方法
@@ -28,6 +30,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(GuliException.class)
     @ResponseBody
     public R error(GuliException e) {
+        log.error(e.getMessage());//测试日志
         e.printStackTrace();
         return R.error().code(e.getCode()).message(e.getMsg());
     }

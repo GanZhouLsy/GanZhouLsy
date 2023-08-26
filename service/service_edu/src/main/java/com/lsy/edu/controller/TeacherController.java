@@ -80,11 +80,11 @@ public class TeacherController {
         String begin = teacherQuery.getBegin();
         String end = teacherQuery.getEnd();
 
-//        try {自定义异常测试
-//            int a = 10/0;
-//        }catch (Exception e) {
-//            throw new GuliException(2001,"自定义异常");
-//        }
+        try {//自定义异常测试
+            int a = 10/0;
+        }catch (Exception e) {
+            throw new GuliException(2001,"自定义异常");
+        }
 
         if (!StringUtils.isEmpty(name)){
             queryWrapper.like("name", name);
